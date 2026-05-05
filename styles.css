@@ -1,0 +1,207 @@
+/* CSS reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* CSS reset end */
+
+.wrap{
+    width: 70%;
+    font-family: 'Open Sans';
+    max-width: 1200px; /* 桌機不會過寬 */
+    margin: 0 auto;    /* 置中 */
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.summary{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.name, h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+.subtitle {
+    font-size: 20px;
+    padding-left: 20px;
+}
+.content-up {
+    font-size: 16px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-left: 20px;
+}
+.content-middle {
+    font-size: 16px;
+    padding-left: 20px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 400px;
+}
+.content-down {
+    font-size: 16px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 200px;
+}
+.content-down-ul {
+    font-size: 14px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 300px;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 20px;
+}
+.job, .hobby {
+    display: flex;
+    justify-content: space-between;
+}
+.hobby h2{
+    font-size: 20px;
+}
+.photo img {
+    width: 100px;
+    height: 120px;
+    border-radius: 50%;
+}
+.position {
+    text-decoration: underline;
+}
+.intro {
+    margin-bottom: 2em; /* 在段落之後增加白色空間 */
+}
+.intro img {
+    width: 15px;
+    height: 15px;
+    object-position: top;
+}
+.info {
+    display: flex;
+    justify-content: flex-start;
+}
+.info div {
+    display: flex;
+    margin-right: 2%;
+    gap: 5px;
+}
+.info img {
+    width: 15px;
+    height: 15px;
+    margin-top: 6px;
+}
+.info a {
+    color: black;
+}
+.content-education, .content-job, .content-hobby, .content-autobiography {
+    margin-left: 42px;
+    margin-right: 42px;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+.content-education ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+a {
+    text-decoration: none;
+    color: gray;
+}
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+p {
+    line-height: 1.8;    /* 行距，自傳建議 1.7~2.0 */
+    margin-bottom: 1rem; /* 段落間距 */
+}
+footer {
+    display: flex;         
+    justify-content: center;
+    align-items: center; 
+}
+/* 畫線 */
+.timeline {
+    position: relative;   /* 讓 ::before 能絕對定位 */
+    padding-left: 2rem;   /* 從容器左邊算起 */
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    bottom: 6px;
+    width: 2px;
+    background: #ccc;
+}
+/* 畫圓 */
+.timeline-item {
+    position: relative;   /* 讓 ::before 能相對自己定位 */
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.8125rem;  /* 往左拉到線上 */
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;         /* 變成圓形 */
+    background: #ccc;
+}
+/* 畫水平線 */
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    margin-bottom: 1em;
+}
+/* 在 iPad 直式 */
+@media(max-width:768px) {
+    .job, .info, .hobby {
+        flex-direction: column; /* 從上到下 */
+    }
+}
