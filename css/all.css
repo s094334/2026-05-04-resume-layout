@@ -1,0 +1,262 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 畫線 */
+.timeline {
+  position: relative; /* 讓 ::before 能絕對定位 */
+  padding-left: 2rem; /* 從容器左邊算起 */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 10px;
+  bottom: 6px;
+  width: 2px;
+  background-color: #ccc;
+}
+
+/* 畫圓 */
+.timeline-item {
+  position: relative; /* 讓 ::before 能相對自己定位 */
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.8125rem; /* 往左拉到線上 */
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%; /* 變成圓形 */
+  background-color: #ccc;
+}
+
+/* 畫水平線 */
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  margin-bottom: 1em;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.up-to-top img {
+  width: 100px;
+  height: 120px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border: #ccc 1px solid;
+  border-width: 2px 3px 2px 5px;
+  border-radius: 90% 6% 93% 5%/5% 94% 7% 95%;
+  /* 做出傾斜的視覺感 */
+  transform: rotate(2deg);
+}
+@media (max-width: 768px) {
+  .up-to-top img {
+    width: 60px;
+    height: 80px;
+  }
+}
+
+.up-to-top img:hover {
+  border: black 1px solid;
+}
+
+.wrap {
+  width: 80%;
+  font-family: "Open Sans";
+  max-width: 1200px;
+  margin: 0 auto; /* 置中 */
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  color: black;
+}
+
+p {
+  line-height: 1.6;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* 第一部分照片及簡介 */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.6;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 5%;
+  gap: 6px;
+}
+
+.photo {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.photo img {
+  width: 100px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.position {
+  text-decoration: underline;
+}
+
+.intro img, .info img {
+  width: 15px;
+  height: 15px;
+  margin-top: 6px;
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+}
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column;
+  }
+}
+
+.info div {
+  display: flex;
+  margin-right: 2%;
+  gap: 5px;
+}
+
+/* 第二部分履歷 */
+.education, .experience, .skills, .autobiography {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 5%;
+  line-height: 1.6;
+}
+
+.subtitle {
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.content {
+  font-size: 16px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* 第三部分工作及學習經歷 */
+.experience-group, .skills-group {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .experience-group, .skills-group {
+    flex-direction: column;
+  }
+}
+
+.experience-group .timeline {
+  flex: 1; /* 兩個 timeline 各佔一半，寬度相同 */
+}
+
+/* 第四部分興趣專長 */
+.skills-content {
+  width: 33%;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (max-width: 768px) {
+  .skills-content {
+    width: 100%;
+  }
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}/*# sourceMappingURL=all.css.map */

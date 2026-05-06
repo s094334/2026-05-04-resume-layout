@@ -1,0 +1,35 @@
+/* 畫線 */
+.timeline {
+    position: relative;   /* 讓 ::before 能絕對定位 */
+    padding-left: 2rem;   /* 從容器左邊算起 */
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    bottom: 6px;
+    width: 2px;
+    background-color: #ccc;
+}
+/* 畫圓 */
+.timeline-item {
+    position: relative;   /* 讓 ::before 能相對自己定位 */
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.8125rem;  /* 往左拉到線上 */
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;         /* 變成圓形 */
+    background-color: #ccc;
+}
+/* 畫水平線 */
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    margin-bottom: 1em;
+}
