@@ -1,7 +1,7 @@
-/* 畫線 */
+/* 畫垂直線 */
 .timeline {
-    position: relative;   /* 讓 ::before 能絕對定位 */
-    padding-left: 2rem;   /* 從容器左邊算起 */
+    position: relative;
+    padding-left: 2rem;
 }
 .timeline::before {
     content: '';
@@ -14,16 +14,16 @@
 }
 /* 畫圓 */
 .timeline-item {
-    position: relative;   /* 讓 ::before 能相對自己定位 */
+    position: relative;
 }
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -1.8125rem;  /* 往左拉到線上 */
+    left: -1.8125rem;
     top: 10px;
     width: 8px;
     height: 8px;
-    border-radius: 50%;         /* 變成圓形 */
+    border-radius: 50%;
     background-color: #ccc;
 }
 /* 畫水平線 */
