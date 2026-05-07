@@ -1,4 +1,21 @@
-/* 畫垂直線 */
+.up-to-top img {
+    width: 100px;
+    height: 120px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border: #ccc 1px solid;
+    border-width: 2px 3px 2px 5px;
+    border-radius: 90% 6% 93% 5% / 5% 94% 7% 95%;
+    transform: rotate(2deg);
+    @include pad {
+        width: 60px;
+        height: 80px;
+    }
+}
+.up-to-top img:hover {
+    border: black 1px solid;
+}
 .timeline {
     position: relative;
     padding-left: 2rem;
@@ -12,7 +29,6 @@
     width: 2px;
     background-color: #ccc;
 }
-/* 畫圓 */
 .timeline-item {
     position: relative;
 }
@@ -26,10 +42,11 @@
     border-radius: 50%;
     background-color: #ccc;
 }
-/* 畫水平線 */
-.line {
-    width: 100%;
-    height: 2px;
-    background-color: #ccc;
+.skills-group .add-line::before {
+    @include line;
     margin-bottom: 1em;
+}
+.autobiography h2::after {
+    @include line;
+    margin-top: 1em;
 }

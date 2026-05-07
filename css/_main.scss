@@ -1,49 +1,16 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-@mixin font-size($size) {
-    font-size: $size;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-@mixin padding {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-@mixin pad {
-    @media(max-width: 768px){
-		@content
-	}
-}
-.up-to-top img {
-    width: 100px;
-    height: 120px;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    border: #ccc 1px solid;
-    border-width: 2px 3px 2px 5px;
-    border-radius: 90% 6% 93% 5% / 5% 94% 7% 95%;
-    /* 做出傾斜的視覺感 */
-    transform: rotate(2deg);
-    @include pad {
-        width: 60px;
-        height: 80px;
-    }
-}
-.up-to-top img:hover {
-    border: black 1px solid;
-}
-.wrap{
+main {
     width: 80%;
     font-family: $font-family-base;
     max-width: 1200px;
-    margin: 0 auto;    /* 置中 */
+    margin: 0 auto;
 }
-h1{
+h1, h2 {
     @include font-size($font-l);
 }
-h2{
+h3 {
     @include font-size($font-m);
 }
 a {
@@ -58,8 +25,11 @@ p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
-/* 第一部分照片及簡介 */
-.summary{
+ul {
+    list-style-type: disc;
+    @include padding;
+}
+.summary {
     display: flex;
     justify-content: space-between;
     line-height: $line-height;
@@ -83,26 +53,26 @@ p {
     height: 15px;
     margin-top: 6px;
 }
-.info {
+.summary ul {
     display: flex;
     justify-content: flex-start;
+    padding: 0;
     @include pad {
         flex-direction: column;
     }
 }
-.info div {
+.info li {
     display: flex;
     margin-right: 2%;
     gap: 5px;
 }
-/* 第二部分履歷 */
 .education, .experience, .skills, .autobiography {
     @include padding;
     margin-top: 5%;
     line-height: $line-height;
 }
 .subtitle {
-    font-size: 20px;
+    @include font-size($font-m);
     @include padding;
 }
 .content {
@@ -111,7 +81,6 @@ p {
     margin-bottom: 0.5em;
     @include padding;
 }
-/* 第三部分工作及學習經歷 */
 .experience-group, .skills-group {
     display: flex;
     justify-content: space-between;
@@ -119,10 +88,9 @@ p {
         flex-direction: column;
     }
 }
-.experience-group .timeline {
-    flex: 1; /* 兩個 timeline 各佔一半，寬度相同 */
+.timeline, .experience-group {
+    flex: 1;
 }
-/* 第四部分興趣專長 */
 .skills-content {
     width: 33%;
     font-size: 16px;
@@ -131,12 +99,8 @@ p {
         width: 100%;
     };
 }
-ul {
-    list-style-type: disc;
-    @include padding;
-}
 footer {
-    display: flex;         
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #ccc;
