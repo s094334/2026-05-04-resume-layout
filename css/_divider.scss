@@ -1,3 +1,5 @@
+@use "mixin" as *;
+@use "variables" as *;
 .up-to-top img {
     width: 100px;
     height: 120px;
@@ -18,7 +20,7 @@
 }
 .timeline {
     position: relative;
-    padding-left: 2rem;
+    padding-left: 32px;
 }
 .timeline::before {
     content: '';
@@ -35,7 +37,7 @@
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -1.8125rem;
+    left: -29px;
     top: 10px;
     width: 8px;
     height: 8px;
@@ -44,9 +46,9 @@
 }
 .skills-group .add-line::before {
     @include line;
-    margin-bottom: 1em;
+    margin-bottom: 16px;
 }
 .autobiography h2::after {
     @include line;
-    margin-top: 1em;
+    margin-top: 16px;
 }

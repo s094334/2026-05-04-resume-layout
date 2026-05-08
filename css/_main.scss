@@ -1,9 +1,12 @@
+@use "mixin" as *;
+@use "variables" as *;
+@use "divider" as *;
 *, *::before, *::after {
     box-sizing: border-box;
 }
 main {
     width: 80%;
-    font-family: $font-family-base;
+    font-family: $font-family;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -22,8 +25,8 @@ a:hover {
 }
 p {
     line-height: $line-height;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 ul {
     list-style-type: disc;
@@ -77,8 +80,8 @@ ul {
 }
 .content {
     font-size: 16px;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 8px;
+    margin-bottom: 8px;
     @include padding;
 }
 .experience-group, .skills-group {
@@ -88,13 +91,15 @@ ul {
         flex-direction: column;
     }
 }
+.skills-group {
+    gap: 20px;
+}
 .timeline, .experience-group {
     flex: 1;
 }
-.skills-content {
+.skills-row {
     width: 33%;
     font-size: 16px;
-    @include padding;
     @include pad {
         width: 100%;
     };
